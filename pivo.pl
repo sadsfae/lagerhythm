@@ -1,17 +1,21 @@
 #!/usr/bin/perl -w
+# lagerhythm 0.1
+# simple perl CGI to twitter::lite
+# used to track my beer consumption
+# https://github.com/sadsfae/lagerhythm
 
 use CGI;
 
-# Create the CGI object
+# create CGI
 my $query = new CGI;
 
-# Output the HTTP header
+# output HTTP header
 print $query->header ( );
 
-# Capture form results
+# capture form data
 my $comments = $query->param("comments");
 
-# Filter form results
+# filter form data
 $comments = filter_field ( $comments );
 
 ########### POST TO TWITTER URL ###########
@@ -39,7 +43,7 @@ print <<END_HTML;
 </html>
 END_HTML
 
-# Function for filtering user input
+# filter user input
 
 sub filter_field
 {
