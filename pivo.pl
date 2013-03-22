@@ -39,7 +39,7 @@ print <<END_HTML;
 </html>
 END_HTML
 
-# Functions for filtering user input
+# Function for filtering user input
 
 sub filter_field
 {
@@ -50,18 +50,5 @@ sub filter_field
   $field =~ s/CC://gi;
   $field =~ s/Subject://gi;
   $field =~ s/Content-Type://gi;
-  return $field;
-}
-
-sub filter_header_field
-{
-  my $field = shift;
-  $field =~ s/From://gi;
-  $field =~ s/To://gi;
-  $field =~ s/BCC://gi;
-  $field =~ s/CC://gi;
-  $field =~ s/Subject://gi;
-  $field =~ s/Content-Type://gi;
-  $field =~ s/[\0\n\r\|\!\/\<\>\^\$\%\*\&]+/ /g;
   return $field;
 }
