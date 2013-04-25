@@ -19,9 +19,6 @@ my $comments = $query->param("comments");
 my $lat = $query->param("lat");
 my $long = $query->param("long");
 
-# filter form data
-$comments = filter_field ( $comments );
-
 ########### POST TO TWITTER URL ###########
 
 use Net::Twitter::Lite;
