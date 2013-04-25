@@ -1,4 +1,4 @@
-lagerhythm 0.1
+lagerhythm 0.2
 ==============
 
 This is a simple Perl script which calls the twitter::lite
@@ -12,9 +12,9 @@ This was originally hosted on Red Hat's 'Open Shift'
 of draft beer (pivo tocene) I consumed while in the Czech Republic
 on work assignment.
 
-Later functionality may include using HTML5 geo-location
-so my friends know where I'm enjoying a frosty beverage by
-following the twitter feed along with what I'm having.
+It will also collect your GPS geolocation coordinates and upload
+them as well if your browser supports it (you'll also need to enable
+this in your twitter account).
 
 twitter::lite CPAN module can be found here:
 http://search.cpan.org/~mmims/Net-Twitter-Lite-0.12000/lib/Net/Twitter/Lite.pod
