@@ -1,7 +1,8 @@
 #!/usr/bin/perl -w
-# lagerhythm 0.1
+# lagerhythm 0.2
 # simple perl CGI to twitter::lite
 # used to track my beer consumption
+# this also pulls geolocation (have to enable in twitter acct).
 # https://github.com/sadsfae/lagerhythm
 
 use CGI;
@@ -14,6 +15,9 @@ print $query->header ( );
 
 # capture form data
 my $comments = $query->param("comments");
+# capture longitude, latitude
+my $lat = $query->param("lat");
+my $long = $query->param("long");
 
 # filter form data
 $comments = filter_field ( $comments );
@@ -22,6 +26,7 @@ $comments = filter_field ( $comments );
 
 use Net::Twitter::Lite;
 
+# you need your secret tokens/keys here
 my $nt = Net::Twitter::Lite->new(
   consumer_key        => 'XXXXXXXXXXXXXXXXXXXXX',
   consumer_secret     => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
@@ -29,7 +34,8 @@ my $nt = Net::Twitter::Lite->new(
   access_token_secret => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 );
 
-my $result = eval { $nt->update($comments) };
+# post tweet, longitude and latitude
+my $result = eval { $nt->update({ status => $comments, lat => $lat, long => $long }) };
 
 warn "$@\n" if $@;
 

@@ -1,15 +1,36 @@
-<html>
-<title>Lagerhythm 0.1</title>
-<head></head>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>Lagerhythm 0.2</title>
+</head>
 <body>
 
 <form action="pivo.pl" method="post">
 <p>Pivo!<br>
 <textarea name="comments" cols="26" rows="4"> </textarea>
+<input name="lat" id="lat" type="hidden">
+<input name="long" id="long" type="hidden">
 
-<p><input type="submit" name="send" value="Bottoms Up!"></p>
-
+</p><p><input name="send" value="Bottoms Up!" type="submit"></p>
+<p id="x"></p>
 </form>
 
-</body>
-</html>
+<script>
+    var _lat = document.getElementById("lat");
+    var _long = document.getElementById("long");
+    var x = document.getElementById("x");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(applyPosition);
+        }
+        else {
+            x.innerHTML="Geolocation is not supported by this browser, suck it.";
+        }
+    }
+    function applyPosition(position) {
+	console.log(position);
+        _lat.value = position.coords.latitude;
+        _long.value = position.coords.longitude;
+    }
+    getLocation();
+</script>
+</body></html>
