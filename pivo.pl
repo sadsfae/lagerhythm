@@ -48,17 +48,3 @@ print <<END_HTML;
 <br>Enjoy yourself, and have fun in life!</body>
 </html>
 END_HTML
-
-# filter user input
-
-sub filter_field
-{
-  my $field = shift;
-  $field =~ s/From://gi;
-  $field =~ s/To://gi;
-  $field =~ s/BCC://gi;
-  $field =~ s/CC://gi;
-  $field =~ s/Subject://gi;
-  $field =~ s/Content-Type://gi;
-  return $field;
-}
