@@ -24,7 +24,7 @@ my $long = $query->param("long");
 use Net::Twitter::Lite::WithAPIv1_1;
 
 # you need your secret tokens/keys here
-my $nt = Net::Twitter::Lite->new(
+my $nt = Net::Twitter::Lite::WithAPIv1_1->new(
   consumer_key        => 'XXXXXXXXXXXXXXXXXXXXX',
   consumer_secret     => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
   access_token        => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
