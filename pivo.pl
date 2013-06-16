@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# lagerhythm 0.21
+# lagerhythm 0.2.1
 # simple perl CGI to twitter::lite and twitter API v1.1
 # used to track my beer consumption
 # this also pulls geolocation (have to enable in twitter acct).

@@ -1,4 +1,4 @@
-lagerhythm 0.21
+lagerhythm 0.2.1
 ==============
 
 This is a simple Perl script which calls the twitter::lite
