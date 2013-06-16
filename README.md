@@ -1,8 +1,8 @@
-lagerhythm 0.2
+lagerhythm 0.21
 ==============
 
 This is a simple Perl script which calls the twitter::lite
-API and captures text via CGI then passes it along to twitter.
+v1.1 API and captures text via CGI then passes it along to twitter.
 
 It will also collect your GPS geolocation coordinates and upload
 them as well if your browser supports it (you'll also need to enable
@@ -16,8 +16,8 @@ This was originally hosted on Red Hat's 'Open Shift'
 of draft beer (pivo tocene) I consumed while in the Czech Republic
 on work assignment.
 
-twitter::lite CPAN module can be found here:
-http://search.cpan.org/~mmims/Net-Twitter-Lite-0.12000/lib/Net/Twitter/Lite.pod
+twitter::lite CPAN module can be found below, and you'll need to use the 1.1 API:
+http://search.cpan.org/~mmims/Net-Twitter-Lite-0.12000/lib/Net/Twitter/Lite/WithAPIv1_1.pod
 
 This is released under the BSD license so do anything you want with it,
 just remember to have fun.
