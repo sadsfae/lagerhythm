@@ -21,7 +21,7 @@ my $long = $query->param("long");
 
 ########### POST TO TWITTER URL ###########
 
-use Net::Twitter::Lite;
+use Net::Twitter::Lite::WithAPIv1_1;
 
 # you need your secret tokens/keys here
 my $nt = Net::Twitter::Lite->new(
